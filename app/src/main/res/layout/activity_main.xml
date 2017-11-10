@@ -6,28 +6,79 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
     <!--内容区-->
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/main_content"
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <include
-            android:id="@+id/appbar"
-            layout="@layout/toolbar" />
-
-        <FrameLayout
-            android:id="@+id/frame_content"
+        <com.yikezhong.demo.custom.MyViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/appbar"
-            android:scrollbars="none"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-    </android.support.design.widget.CoordinatorLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"></com.yikezhong.demo.custom.MyViewPager>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_fg_punch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/punch_rb_selector"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="推荐"
+                android:textColor="@drawable/text_selector" />
+
+            <RadioButton
+                android:id="@+id/rb_fg_report"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/report_rb_selector"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="段子"
+                android:textColor="@drawable/text_selector" />
+
+            <RadioButton
+                android:id="@+id/rb_fg_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/msg_rb_selector"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="视频"
+                android:textColor="@drawable/text_selector" />
+
+
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
 
     <!--左侧导航菜单-->
     <android.support.design.widget.NavigationView
@@ -72,15 +123,15 @@
 
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="我的作品" />
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="设置" />
 
 
