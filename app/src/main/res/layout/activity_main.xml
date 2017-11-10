@@ -6,14 +6,16 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
     <!--内容区-->
-    <include
-        android:id="@+id/appbar"
-        layout="@layout/toolbar" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <!--自定义标题栏-->
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
         <com.yikezhong.demo.custom.MyViewPager
             android:id="@+id/viewPager"
@@ -71,7 +73,6 @@
                 android:padding="5dp"
                 android:text="视频"
                 android:textColor="@drawable/text_selector" />
-
 
 
         </RadioGroup>

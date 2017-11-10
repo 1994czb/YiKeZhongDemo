@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/report_pitch" android:state_checked="true"></item>
-    <item android:drawable="@drawable/report_nopitch" android:state_checked="false"></item>
-    <item android:drawable="@drawable/report_nopitch"></item>
+    <item android:drawable="@drawable/duanzi" android:state_checked="true"></item>
+    <item android:drawable="@drawable/noduanzi" android:state_checked="false"></item>
+    <item android:drawable="@drawable/noduanzi"></item>
 </selector>

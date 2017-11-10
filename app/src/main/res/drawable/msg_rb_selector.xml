@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/msg_pitch" android:state_checked="true"></item>
-    <item android:drawable="@drawable/msg_nopitch" android:state_checked="false"></item>
-    <item android:drawable="@drawable/msg_nopitch"></item>
+    <item android:drawable="@drawable/shipin" android:state_checked="true"></item>
+    <item android:drawable="@drawable/noshipin" android:state_checked="false"></item>
+    <item android:drawable="@drawable/noshipin"></item>
 </selector>
