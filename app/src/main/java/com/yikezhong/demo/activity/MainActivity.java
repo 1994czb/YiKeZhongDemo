@@ -19,7 +19,7 @@ import com.yikezhong.demo.R;
 import com.yikezhong.demo.adapter.MyViewpagerAdapter;
 import com.yikezhong.demo.custom.MyViewPager;
 import com.yikezhong.demo.fragment.Cross_talkFragment;
-import com.yikezhong.demo.fragment.VideoFragment;
+import com.yikezhong.demo.fragment.video.VideoFragment;
 import com.yikezhong.demo.fragment.recommend.RecommendFragment;
 
 import java.util.ArrayList;
