@@ -45,12 +45,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.mDrawerLayout);
-        mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
-        setNavigationViewItemClickListener();
-
         //设置适配器
         viewpager.setAdapter(new MyViewpagerAdapter(getSupportFragmentManager(), fragments, this));
+        //radioButton点击事件
         radioFragment();
         //点击左侧图片打开侧滑菜单
         image_left.setOnClickListener(new View.OnClickListener() {
@@ -64,9 +61,12 @@ public class MainActivity extends AppCompatActivity {
         image_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,CrationActivity.class));
+                startActivity(new Intent(MainActivity.this, CrationActivity.class));
+                finish();
             }
         });
+
+
 
     }
 
@@ -106,15 +106,23 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.navigation_item_home:
                         // mToolbar.setTitle("首页");
-                        mNavigationView.getMenu().getItem(0).setTitle("首页");
+                        mNavigationView.getMenu().getItem(0).setTitle("我的关注");
                         //switchFragment("MainFragment");
                         break;
                     case R.id.navigation_item_blog:
                         // mToolbar.setTitle("我的博客");
+                        mNavigationView.getMenu().getItem(0).setTitle("我的收藏");
                         //switchFragment("BlogFragment");
                         break;
                     case R.id.navigation_item_about:
                         //mToolbar.setTitle("关于");
+                        mNavigationView.getMenu().getItem(0).setTitle("搜索好友");
+                        //switchFragment("AboutFragment");
+                        break;
+
+                    case R.id.navigation_item_tongzhi:
+                        //mToolbar.setTitle("关于");
+                        mNavigationView.getMenu().getItem(0).setTitle("消息通知");
                         //switchFragment("AboutFragment");
                         break;
                     default:
@@ -133,6 +141,9 @@ public class MainActivity extends AppCompatActivity {
 
     //找控件
     private void initView() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.mDrawerLayout);
+        mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
+        setNavigationViewItemClickListener();
         image_right = (ImageView) findViewById(R.id.icon_right);
         image_left = (ImageView) findViewById(R.id.icon_left);
         title = (TextView) findViewById(R.id.title);

@@ -5,15 +5,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/navigation_item_home"
-            android:icon="@mipmap/ic_launcher"
-            android:title="首页" />
+            android:icon="@drawable/raw_1499933216"
+            android:title="我的关注         >" />
         <item
             android:id="@+id/navigation_item_blog"
-            android:icon="@mipmap/ic_launcher"
-            android:title="我的博客" />
+            android:icon="@drawable/raw_1499947358"
+            android:title="我的收藏" />
         <item
             android:id="@+id/navigation_item_about"
-            android:icon="@mipmap/ic_launcher"
-            android:title="关于" />
+            android:icon="@drawable/raw_1499946865"
+            android:title="搜索好友" />
+        <item
+            android:id="@+id/navigation_item_tongzhi"
+            android:icon="@drawable/raw_1499947389"
+            android:title="消息通知" />
     </group>
 </menu>

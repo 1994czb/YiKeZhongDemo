@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toggle="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mDrawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--自定义标题栏-->
+        <!--标题栏-->
         <include
             layout="@layout/toolbar"
             android:layout_width="match_parent"
@@ -26,12 +27,12 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#000000" />
-
+            android:background="#6e6e6e" />
+        <!--底部导航栏-->
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
@@ -42,7 +43,7 @@
                 android:button="@null"
                 android:checked="true"
                 android:drawablePadding="5dp"
-                android:drawableTop="@drawable/punch_rb_selector"
+                android:drawableTop="@drawable/recommend_selector"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="推荐"
@@ -55,7 +56,7 @@
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawablePadding="5dp"
-                android:drawableTop="@drawable/report_rb_selector"
+                android:drawableTop="@drawable/cross_talk_selector"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="段子"
@@ -68,7 +69,7 @@
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawablePadding="5dp"
-                android:drawableTop="@drawable/msg_rb_selector"
+                android:drawableTop="@drawable/video_selector"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="视频"
@@ -96,44 +97,79 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="110dp"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher_round" />
+                    android:layout_weight="1"
+                    android:src="@drawable/day_night_selecte" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="夜间模式" />
+                <!--自定义button使用的网址-->
+                <!--https://github.com/zcweng/ToggleButton-->
+                <com.zcw.togglebutton.ToggleButton
+                    android:layout_width="54dp"
+                    android:layout_height="30dp"
+                    toggle:tbBorderWidth="2dp"
+                    toggle:tbOffColor="#ddd"
+                    toggle:tbOnColor="#0f0"></com.zcw.togglebutton.ToggleButton>
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
 
-                <TextView
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="我的作品" />
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
-                <TextView
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/raw_1499947056" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我的作品" />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="设置" />
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/raw_1499947157" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="设置" />
+                </LinearLayout>
 
 
             </LinearLayout>
