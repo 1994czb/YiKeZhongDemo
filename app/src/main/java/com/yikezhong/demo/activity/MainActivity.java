@@ -14,13 +14,16 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yikezhong.demo.R;
 import com.yikezhong.demo.adapter.MyViewpagerAdapter;
 import com.yikezhong.demo.custom.MyViewPager;
+import com.yikezhong.demo.custom.UiUtils;
 import com.yikezhong.demo.fragment.Cross_talkFragment;
-import com.yikezhong.demo.fragment.video.VideoFragment;
 import com.yikezhong.demo.fragment.recommend.RecommendFragment;
+import com.yikezhong.demo.fragment.video.VideoFragment;
+import com.zcw.togglebutton.ToggleButton;
 
 import java.util.ArrayList;
 
@@ -37,14 +40,29 @@ public class MainActivity extends AppCompatActivity {
     private ImageView image_left;
     private TextView title;
     private ImageView image_right;
+    private ToggleButton toggleBtn;
+    private ImageView iv_day_naght;
+
+    //设置日夜间模式
+    private int theme = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //切换主题必须放在onCreate()之前
+        if (savedInstanceState == null) {
+            theme = UiUtils.getAppTheme(MainActivity.this);
+        } else {
+            theme = savedInstanceState.getInt("theme");
+        }
+        setTheme(theme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
 
+
+        //日夜间模式按钮
+        toggleButton();
         //设置适配器
         viewpager.setAdapter(new MyViewpagerAdapter(getSupportFragmentManager(), fragments, this));
         //radioButton点击事件
@@ -67,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
+
 
     //radioButton点击事件
     private void radioFragment() {
@@ -150,11 +168,48 @@ public class MainActivity extends AppCompatActivity {
         viewpager = (MyViewPager) findViewById(R.id.viewPager);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         rb_fg_punch = (RadioButton) findViewById(R.id.rb_fg_punch);
+        toggleBtn = (ToggleButton) findViewById(R.id.toggleBtn);
+        //日夜间图片
+        iv_day_naght = (ImageView) findViewById(R.id.iv_day_naght);
 
         fragments = new ArrayList<>();
         fragments.add(new RecommendFragment());
         fragments.add(new Cross_talkFragment());
         fragments.add(new VideoFragment());
         title.setText("推荐");
+    }
+
+    //日夜间模式按钮
+    public void toggleButton() {
+        //切换开关
+        toggleBtn.toggle();
+        //切换无动画
+        toggleBtn.toggle(false);
+        //开关切换事件
+        toggleBtn.setOnToggleChanged(new ToggleButton.OnToggleChanged() {
+            @Override
+            public void onToggle(boolean on) {
+                Toast.makeText(MainActivity.this, "点击了日夜间模式的按钮", Toast.LENGTH_SHORT).show();
+
+                UiUtils.switchAppTheme(MainActivity.this);
+                //跳转
+                Intent intent = getIntent();
+                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);//进入动画
+                finish();
+                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                startActivity(intent);
+            }
+        });
+
+        toggleBtn.setToggleOn();
+        toggleBtn.setToggleOff();
+
+//        //无动画切换
+//        toggleBtn.setToggleOn(false);
+//        toggleBtn.setToggleOff(false);
+//
+//        //禁用动画
+//        toggleBtn.setAnimate(false);
+
     }
 }

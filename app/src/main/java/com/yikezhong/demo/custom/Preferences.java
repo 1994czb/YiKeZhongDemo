@@ -1,0 +1,26 @@
+package com.yikezhong.demo.custom;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+
+/**
+ * Created by Administrator on 2017/11/11.
+ */
+//// // TODO: 2017/11/11 日夜间模式用到的类
+public class Preferences {
+    private static final String shared_name="user_guide";
+    private static SharedPreferences sp;
+
+    public static String getString(Context context, String key,
+                                   String defaultValues) {
+        SharedPreferences sp = context.getSharedPreferences(shared_name,
+                context.MODE_PRIVATE);
+        return sp.getString(key, defaultValues);
+    }
+
+    public static void setString(Context context, String key, String Values) {
+        SharedPreferences sp = context.getSharedPreferences(shared_name,
+                context.MODE_PRIVATE);
+        sp.edit().putString(key, Values).commit();
+    }
+}

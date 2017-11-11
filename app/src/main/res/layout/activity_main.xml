@@ -104,6 +104,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/iv_day_naght"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,6 +118,7 @@
                 <!--自定义button使用的网址-->
                 <!--https://github.com/zcweng/ToggleButton-->
                 <com.zcw.togglebutton.ToggleButton
+                    android:id="@+id/toggleBtn"
                     android:layout_width="54dp"
                     android:layout_height="30dp"
                     toggle:tbBorderWidth="2dp"
