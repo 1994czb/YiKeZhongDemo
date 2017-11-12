@@ -117,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //实现侧滑效果的方法
+    //http://blog.csdn.net/w1186859682/article/details/72049913
+    //日夜间模式链接
     private void setNavigationViewItemClickListener() {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -172,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
         //日夜间图片
         iv_day_naght = (ImageView) findViewById(R.id.iv_day_naght);
 
+
         fragments = new ArrayList<>();
         fragments.add(new RecommendFragment());
         fragments.add(new Cross_talkFragment());
@@ -210,6 +213,13 @@ public class MainActivity extends AppCompatActivity {
 //
 //        //禁用动画
 //        toggleBtn.setAnimate(false);
+
+    }
+
+    public void iv_logIn(View view) {
+
+        startActivity(new Intent(MainActivity.this,RegisterActivity.class));
+        finish();
 
     }
 }
