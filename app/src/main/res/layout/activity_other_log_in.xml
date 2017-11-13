@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorAccent"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -21,7 +21,7 @@
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:onClick="btn_register"
-            android:text="已有账号？"
+            android:text="注册账号"
             android:textSize="20dp" />
     </RelativeLayout>
 

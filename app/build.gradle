@@ -25,9 +25,16 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+
+
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.zcw:togglebutton-library:1.0.0'
+    compile 'io.reactivex.rxjava2:rxjava:+'
+    compile 'io.reactivex.rxjava2:rxandroid:+'
+    compile 'com.squareup.retrofit2:retrofit:+'
+    compile 'com.squareup.retrofit2:converter-gson:+'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:+'
     testCompile 'junit:junit:4.12'
 }

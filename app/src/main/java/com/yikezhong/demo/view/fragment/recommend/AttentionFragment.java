@@ -1,4 +1,4 @@
-package com.yikezhong.demo.fragment.recommend;
+package com.yikezhong.demo.view.fragment.recommend;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

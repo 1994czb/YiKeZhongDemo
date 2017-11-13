@@ -1,4 +1,4 @@
-package com.yikezhong.demo.fragment.recommend;
+package com.yikezhong.demo.view.fragment.cross_talk;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,12 +12,14 @@ import com.yikezhong.demo.R;
 /**
  * Created by Administrator on 2017/11/10.
  */
+//// // TODO: 2017/11/10 段子页面
+public class Cross_talkFragment extends Fragment {
 
-public class HotFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate( R.layout.hot_fragment,container,false);
+        View view = inflater.inflate(R.layout.cross_talk, container, false);
         return view;
     }
+
 }

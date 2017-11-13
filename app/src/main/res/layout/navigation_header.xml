@@ -17,7 +17,7 @@
             android:gravity="bottom"
             android:orientation="horizontal">
             <ImageView
-
+                android:onClick="iv_more_login"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="15dp"

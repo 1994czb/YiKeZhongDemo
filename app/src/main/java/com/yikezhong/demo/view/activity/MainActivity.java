@@ -1,4 +1,4 @@
-package com.yikezhong.demo.activity;
+package com.yikezhong.demo.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,9 +20,11 @@ import com.yikezhong.demo.R;
 import com.yikezhong.demo.adapter.MyViewpagerAdapter;
 import com.yikezhong.demo.custom.MyViewPager;
 import com.yikezhong.demo.custom.UiUtils;
-import com.yikezhong.demo.fragment.Cross_talkFragment;
-import com.yikezhong.demo.fragment.recommend.RecommendFragment;
-import com.yikezhong.demo.fragment.video.VideoFragment;
+import com.yikezhong.demo.view.activity.login_register.MoreLogInActivity;
+import com.yikezhong.demo.view.activity.login_register.RegisterActivity;
+import com.yikezhong.demo.view.fragment.cross_talk.Cross_talkFragment;
+import com.yikezhong.demo.view.fragment.recommend.RecommendFragment;
+import com.yikezhong.demo.view.fragment.video.VideoFragment;
 import com.zcw.togglebutton.ToggleButton;
 
 import java.util.ArrayList;
@@ -222,6 +224,12 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(new Intent(MainActivity.this,RegisterActivity.class));
         finish();
+
+    }
+
+    public void iv_more_login(View view) {
+
+        startActivity(new Intent(MainActivity.this, MoreLogInActivity.class));
 
     }
 }

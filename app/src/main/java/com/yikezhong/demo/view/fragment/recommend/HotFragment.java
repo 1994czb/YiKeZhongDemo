@@ -1,4 +1,4 @@
-package com.yikezhong.demo.fragment.video;
+package com.yikezhong.demo.view.fragment.recommend;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,16 +10,14 @@ import android.view.ViewGroup;
 import com.yikezhong.demo.R;
 
 /**
- * Created by Administrator on 2017/11/11.
+ * Created by Administrator on 2017/11/10.
  */
-//// // TODO: 2017/11/11 视频页面的附近页面
-public class Nearby_VideoFragment extends Fragment {
 
+public class HotFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.nearby_video_fragment,container,false);
+        View view = inflater.inflate( R.layout.hot_fragment,container,false);
         return view;
     }
-
 }
